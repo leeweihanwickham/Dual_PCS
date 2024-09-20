@@ -13,6 +13,7 @@ fn kzg_setup_benchmark(c: &mut Criterion) {
         group.plot_config(plot_config);
 
         let name = format!("KZG Setup");
+        group.sample_size(10);
         group.bench_function(&name, move |b| {
             b.iter(|| kzg_setup(1 << idx));
         });
